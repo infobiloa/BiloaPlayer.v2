@@ -23,7 +23,7 @@ let getbase=()=>{
 
 
 
-let openplyr=()=> { window.open('plyr.html?id='+base)}
+let openplyr=()=> { window.open('https://infobiloa.github.io/BiloaPlayer.v2/plyr.html?id='+base)}
 
 
 let pmsg = 'Copy Embed Code' ;
@@ -32,7 +32,7 @@ let pmsg = 'Copy Embed Code' ;
 let embedplyr=()=> {
   prompt(pmsg,`<iframe width="560" height="315" 
 scrolling="no"
-src="plyr.html?id=${base}" 
+src="https://infobiloa.github.io/BiloaPlayer.v2/plyr.html?id=${base}" 
 frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
 gyroscope; picture-in-picture" allowfullscreen>
 </iframe>`)
@@ -42,7 +42,7 @@ gyroscope; picture-in-picture" allowfullscreen>
 
 
 let iframe=()=> {
-    s('plyr').src='plyr.html?id='+base;
+    s('plyr').src='https://infobiloa.github.io/BiloaPlayer.v2/plyr.html?id='+base;
   
   
 }
