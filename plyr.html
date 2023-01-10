@@ -10,7 +10,8 @@
 </style>
 <script src="fluidplayer.min.js"></script>
 <video poster="poster.jpg" width="100%" id="video-id"><source src="video.mp4" type="video/mp4" />
-var myFP = fluidPlayer(
+<script>
+	var myFP = fluidPlayer(
 			'video-id',	{
 		"layoutControls": {
 			"controlBar": {
@@ -51,6 +52,6 @@ var myFP = fluidPlayer(
     let json = JSON.parse(atob(getparam('id'))) ;
     let driveid = json.id;
     video.src = `${driveid }`;
-    //video.poster = driveid;
+    video.poster = driveid;
   }
 </script>
