@@ -1,25 +1,57 @@
-<link rel="stylesheet" href="plyrBiloa.css" />
-<script src="plyrBiloa.js"></script>
-<video id="player" playsinline controls data-poster="/path/to/poster.jpg">
-  <source src="/path/to/video.mp4" type="video/mp4" />
-  <source src="/path/to/video.webm" type="video/webm" />
-
-  <!-- Captions are optional -->
-  <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
-</video>
-
+<style>
+  body {
+    margin : 0;
+    padding: 0;
+  }
+  video{
+	width: 100%;
+	height: 100%;
+  }
+</style>
+<script src="fluidplayer.min.js"></script>
+<video poster="poster.jpg" width="100%" id="video-id"><source src="video.mp4" type="video/mp4" />
 <script>
-  const player = new Plyr('#player');
-</script>
+	var myFP = fluidPlayer(
+			'video-id',	{
+		"layoutControls": {
+			"controlBar": {
+				"autoHideTimeout": 3,
+				"animated": true,
+				"autoHide": true
+			},
+			"htmlOnPauseBlock": {
+				"html": null,
+				"height": null,
+				"width": null
+			},
+			"autoPlay": false,
+			"mute": false,
+			"allowTheatre": true,
+			"playPauseAnimation": true,
+			"playbackRateEnabled": true,
+			"allowDownload": false,
+			"playButtonShowing": true,
+			"fillToContainer": false,
+			"posterImage": ""
+		},
+		"vastOptions": {
+			"adList": [],
+			"adCTAText": false,
+			"adCTATextPosition": ""
+		}
+	}
+		);
+	</script>
+		
 <script>
   
   function getparam(a,e){return e||(e=window.location.href),new URL(e).searchParams.get(a)}
 
-  let video = document.getElementById('player');
+  let video = document.getElementById('video-id');
   if(getparam('id')){
     let json = JSON.parse(atob(getparam('id'))) ;
     let driveid = json.id;
-    video.src = `${driveid}`;
+    video.src = `${driveid }`;
     video.poster = driveid;
   }
 </script>
