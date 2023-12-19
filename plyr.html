@@ -6,7 +6,7 @@
 <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
 <video width="100%" id="video-id"><source src="video.mp4" type="video/mp4" />
 <script>
-	var myFP = fluidPlayer(
+	 var myFP = fluidPlayer(
         'video-id',	{
 	"layoutControls": {
 		"controlBar": {
@@ -14,13 +14,17 @@
 			"animated": true,
 			"autoHide": true
 		},
-		
-		"autoPlay": true,
+		"htmlOnPauseBlock": {
+			"html": null,
+			"height": null,
+			"width": null
+		},
+		"autoPlay": false,
 		"mute": true,
 		"allowTheatre": true,
-		"playPauseAnimation": true,
-		"playbackRateEnabled": true,
-		"allowDownload": true,
+		"playPauseAnimation": false,
+		"playbackRateEnabled": false,
+		"allowDownload": false,
 		"playButtonShowing": true,
 		"fillToContainer": false,
 		"posterImage": ""
