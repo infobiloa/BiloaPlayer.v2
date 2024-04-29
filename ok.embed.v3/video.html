@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <link rel="stylesheet" href="css/plyr.css" />
+    <script src="js/plyr.js"></script>
+    <style>
+        * {
+	        padding: 0;
+	        margin: 0;
+          }
+
+         html, body{
+	        height: 100%;
+	        margin: 0;
+	        display: flex;
+	        flex-direction: column;
+         }
+       .plyr{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        #main-container{
+        width: 100%;
+	      height: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    
+  <div  id="main-container">
+    <video width="100%" height="100%" id="player" playsinline controls data-poster="img/poster.jpg">
+      <source src="" type="video/mp4" />
+      
+      <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default />
+  </video>
+  </div>
+
+<script>
+  let params = new URL(document.location).searchParams;
+  let video = document.getElementById('player');
+  let viurl = window.atob(params.get('url'))  ;
+  video.src = viurl;
+  const player = new Plyr('#player');
+</script>
+      
+      
+</body>
+</html>
